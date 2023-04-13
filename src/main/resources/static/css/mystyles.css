@@ -1,0 +1,11 @@
+body {
+  background-color: #e2e2e2;
+}
+.container {
+  background-color: #fff;
+  padding: 20px;
+}
+.profile {
+  border-radius: 50%;
+  max-width: 10%;
+}

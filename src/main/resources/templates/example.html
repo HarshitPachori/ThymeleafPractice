@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- adding css using thymeleaf tag -->
+    <link rel="stylesheet" th:href="@{/css/mystyles.css}" />
+  </head>
+  <body>
+    <img class="profile" th:src="@{/images/harshit.jpg}" alt="" />
+    <div class="container">
+      <h1>Adding CSS , JS and Image in Thymeleaf</h1>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat
+        incidunt quos ab repellendus culpa. Fuga, repellendus velit, maxime
+        sapiente ex tempore neque voluptate ducimus quas iure rem ab architecto
+        qui temporibus placeat voluptates sed culpa voluptatem eveniet nesciunt
+        esse atque! Possimus, distinctio! Possimus nam quasi fugit laboriosam
+        nobis. Obcaecati quia a, dolor adipisci, iste numquam, distinctio
+        officia fugiat ut laudantium fuga unde error ullam veniam cum explicabo
+        placeat quasi magni sint. Dolor ex vero fugit aut architecto natus sunt
+        omnis odio? Fugiat, alias! Ab dicta a quia eaque tempore natus, aliquam
+        veniam pariatur fugiat sint ullam est doloribus vitae quae.
+      </p>
+    </div>
+    <script th:src="@{/js/myjs.js}"></script>
+  </body>
+</html>

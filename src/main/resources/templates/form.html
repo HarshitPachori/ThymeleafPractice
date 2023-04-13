@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <title>Hello, world!</title>
+  </head>
+
+  <body style="background-color: #e2e2e2">
+    <div class="container">
+      <div class="row mt-5">
+        <div class="col-md-6 offset-md-3">
+          <form
+            th:action="@{/process}"
+            method="post"
+            th:object="${loginData}"
+            class="bg-white p-4 rounded shadow"
+          >
+            <h1 class="text-center">Register Here</h1>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label"
+                >Username</label
+              >
+              <!-- add class is-invalid to activate div error   isse ye hamesha rahega lekin sirf error ho tabhi dikhana hai uske liye ham use krenge th:classappend wala-->
+              <input
+                name="userName"
+                type="text"
+                class="form-control"
+                aria-describedby="emailHelp"
+                th:classappend="${#fields.hasErrors('userName') ? 'is-invalid' : ''}"
+                th:value="${loginData.userName}"
+              />
+
+              <!-- .............error container............. -->
+              <div
+                id="validationserver03Feedback"
+                231-
+                class="invalid-feedback"
+                th:each="err : ${#fields.errors('userName')}"
+                th:text="${err}"
+              ></div>
+            </div>
+
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label"
+                >Email</label
+              >
+
+              <input
+                name="email"
+                type="email"
+                class="form-control"
+                id="exampleInputPassword1"
+                th:value="${loginData.email}"
+                th:classappend="${#fields.hasErrors('email') ? 'is-invalid' : ''}"
+              />
+              <!-- .............error container............. -->
+              <div
+                id="validationserver03Feedback"
+                class="invalid-feedback"
+                th:each="err : ${#fields.errors('email')}"
+                th:text="${err}"
+              ></div>
+            </div>
+
+            <div class="mb-3 form-check">
+              <input
+                name="agreed"
+                type="checkbox"
+                class="form-check-input"
+                id="exampleCheck1"
+                th:classappend="${#fields.hasErrors('agreed') ? 'is-invalid' : ''}"
+              />
+              <!-- .............error container............. -->
+              <div
+                id="validationserver03Feedback"
+                class="invalid-feedback"
+                th:each="err : ${#fields.errors('agreed')}"
+                th:text="${err}"
+              ></div>
+
+              <label class="form-check-label" for="exampleCheck1"
+                >Agree terms and conditions...</label
+              >
+            </div>
+            <div class="container text-center">
+              <button type="submit" class="btn btn-primary shadow">
+                Submit
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

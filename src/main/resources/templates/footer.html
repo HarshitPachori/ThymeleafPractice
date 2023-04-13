@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Footer Template</title>
+  </head>
+  <body>
+    <!-- <footer id="fragment-tag" th:fragment="footer1"> -->
+    <!--  to pass dyanmic data -->
+    <footer id="fragment-tag" th:fragment="footer1(title,subtitle)">
+      <div class="container">
+        <h1 th:text="${title}"></h1>
+        <h1 th:text="${subtitle}"></h1>
+        <h1>Technical Harshit</h1>
+        <h2>Provide good content about programming.........</h2>
+        <h1>Feel free tocontact with me...</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti
+          eligendi voluptate dolorum ullam numquam assumenda recusandae
+          quibusdam officia incidunt unde autem nostrum, distinctio voluptatum
+          nobis quaerat veritatis nisi doloribus quo!
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

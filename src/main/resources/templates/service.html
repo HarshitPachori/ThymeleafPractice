@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Page</title>
+  </head>
+
+  <body>
+    <h1>Servies provided by me....</h1>
+    <hr />
+    <!-- Going to include footer -->
+    <!-- host ke andr fragment aajaega insert krne pr -->
+    <!-- passing dynamic data
+    th:insert="~{footer::footer1('This is title','This is subtitle')}" -->
+
+    <!-- passing static data -->
+    <!-- th:insert="~{footer::footer1('This is title','This is subtitle')}" -->
+    <footer
+      id="host-tag"
+      th:insert="~{footer::footer1(${title},${subtitle})}"
+    ></footer>
+    <!-- isme replace use krne pr exclude krdega hot tag ko -->
+    <!-- <footer id="host-tag" th:replace="~{footer::footer1}"></footer> -->
+    <!-- isme include use krne pr content replace hojaega -->
+    <!-- <footer id="host-tag" th:include="~{footer::footer1}"></footer> -->
+  </body>
+</html>

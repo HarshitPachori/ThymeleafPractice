@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2>name of the owner is....</h2>
+    <!-- to print value of name from server -->
+    <h1 th:text="${name}"></h1>
+    <!-- to convert to the uppercase -->
+    <h3 th:text="${#strings.toUpperCase(name)}"></h3>
+    <h3 th:text="${#strings.toLowerCase(name)}"></h3>
+    <!-- to get the length of a string -->
+    <span th:text="${#strings.length(name)}"></span>
+    <h1 th:text="${date}"></h1>
+    <!-- to declare local variables scoped to this div only -->
+    <div th:with="a = 5, b=67, n=${name}">
+      <h5>Value of a is <span th:text="${a}"></span></h5>
+      <!-- to print st6ring we can use the single quotes -->
+      <h3 th:text="'Value of b is ' + ${b}"></h3>
+      <h3>Local value of n is <span th:text="${n}"></span></h3>
+      <h2>Sum of a and b is <span th:text="${a+b}"></span></h2>
+      <h2 th:text="'Sum of ' + ${a} + ' and ' + ${b} + ' is ' + ${a+b}"></h2>
+    </div>
+    <!-- this will give the nulll value because its scope is local to the div only  -->
+    <h3>Local value of n is <span th:text="${n}"></span></h3>
+  </body>
+</html>
